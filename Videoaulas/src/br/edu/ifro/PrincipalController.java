@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -23,13 +24,34 @@ public class PrincipalController implements Initializable {
     private TextField txtnum1, txtnum2, txtresult;
     
     @FXML
-    private Button btnsoma;
+    private Button btnsoma, btnsubtrair, btndividir, btnmultiplicar;
+    @FXML
+    private Label label;
     
     @FXML
     private void Soma (ActionEvent event) {
-        Double num1 = Double.parseDouble(txtnum1.getText());
-        Double num2 = Double.parseDouble(txtnum1.getText());
-        Double result = Double.parseDouble(txtnum1.getText());
+        Double numero1 = Double.parseDouble(txtnum1.getText());
+        Double numero2 = Double.parseDouble(txtnum2.getText());
+        Double resultado = numero1 + numero2;
+        txtresult.setText(resultado.toString());
+    }
+    private void Subtrair (ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtnum1.getText());
+        Double numero2 = Double.parseDouble(txtnum2.getText());
+        Double resultado = numero1 - numero2;
+        txtresult.setText(resultado.toString());
+    }
+    private void Dividir (ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtnum1.getText());
+        Double numero2 = Double.parseDouble(txtnum2.getText());
+        Double resultado = numero1 / numero2;
+        txtresult.setText(resultado.toString());
+    }
+    private void Multiplicar (ActionEvent event) {
+        Double numero1 = Double.parseDouble(txtnum1.getText());
+        Double numero2 = Double.parseDouble(txtnum2.getText());
+        Double resultado = numero1 * numero2;
+        txtresult.setText(resultado.toString());
     }
     
     @Override
